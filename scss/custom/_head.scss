@@ -6,10 +6,18 @@
     font-style: normal;
 
 }
+@font-face {
+  font-family: 'fairviewsmall_caps';
+  src: url('fairview_smallcaps-webfont.woff2') format('woff2'),
+       url('fairview_smallcaps-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 nav{
     padding-top:20px;
 }
-h1{
+nav h1{
     font-family: 'burtons_nightmareregular';
     font-size: 2rem;
     margin-top:-20px;
@@ -65,4 +73,10 @@ font-size:.5rem;
             transform: translate(-50%, -50%);
           }
     }
+  }
+
+  @media only screen and (min-width: 755px) {
+   nav h1{
+    font-size:3rem;
+   }
   }

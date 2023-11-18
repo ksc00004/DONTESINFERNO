@@ -1,3 +1,264 @@
 body{
     font-size: 12px;
 }
+
+
+.welcome-bg{
+    background-image:url('../images/background-texture.png')
+}
+.under-welcome{
+    background-color: $bright-red;
+    margin-top:-3px;
+    height:85px;
+}
+h1{
+    font-family: "kon-tiki-aloha-jf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+    font-size:1.25rem;
+    font-weight: 400;
+    font-style: normal;}
+
+ .white-button{position:absolute;}     
+.text-image-hold {
+    position: relative;
+    text-align: center;
+    color: black;
+    margin-top:30px;
+    
+  }
+  .mission{
+    text-align: center;
+  }
+  p{
+    font-family: "alternate-gothic-atf", sans-serif;
+font-weight: 400;
+font-style: normal;
+color:black;
+  }
+.align{
+    margin-bottom:-1rem;
+}
+  .items {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 13vh;
+  }
+  .item {
+    width: 50%;
+  }
+  .item.group-a {
+  
+    order: 10;
+  }
+  .item.group-b {
+    
+    order: 20;
+  }
+  
+  .devil-number{
+    font-size:3rem;
+    font-family: 'fairviewsmall_caps';
+    color:black;
+    margin-bottom:-1rem;
+   
+   
+  }
+  .devil-number::before{
+    content:url('../images/phone-icon.svg');
+  
+  }
+  .items:before {
+    content: "";
+    order: 15;
+    height: 100vh;
+  }
+  @media only screen and (max-width: 400px) {
+    .item.group-a, .item.group-b {
+      width: 100%;
+    }
+    .item.group-a {
+        order: 10;
+    }
+    .item.group-b {
+        order: 10;
+    }
+  }
+  @media only screen and (min-width: 400px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:90px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:33px;
+        
+      }
+   }
+
+@media only screen and (min-width: 430px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:90px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:35px;
+        
+      }
+   }
+   @media only screen and (min-width: 540px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:118px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:40px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:1.5rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width: 625px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:118px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:45px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:1.5rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width: 700px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:118px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:50px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:1.5rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   
+   @media only screen and (min-width: 768px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:118px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:47px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:1.5rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width:900px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:148px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:50px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:2rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width:1000px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:152px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:55px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:2rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width:1100px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:157px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:60px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:2rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
+   @media only screen and (min-width:1200px) {
+    .under-welcome{
+        background-color: $bright-red;
+        margin-top:-3px;
+        height:180px;
+    }
+    .text-image-hold {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-top:70px;
+        
+      }
+      h2{    font-family: "kon-tiki-aloha-jf", sans-serif;
+        font-size:2rem;
+        font-weight: 400;
+        font-style: normal;}
+   }
