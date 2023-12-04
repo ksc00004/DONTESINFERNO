@@ -1,124 +1,305 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <style>
       @import url("https://use.typekit.net/dob2ujl.css");
     </style>
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Website Title</title>
-  </head>
-  <body>
-    <header>
-      <div class="container-FLUID">
+    <title>Dantes Inferno</title>
+</head>
+<body>
+<header>
+    <div class="container-fluid">
         <nav>
-          <div class="row">
-            <div class=".text.image.hold">
-              <img
-                class="col-4 col-md-3 col-lg-2"
-                src="images/nav-flame-left.svg"
-                alt="background flame"
-              />
-              <img
-                class="col-4 offset-4 col-md-3 offset-md-6 col-lg-2 offset-lg-8"
-                src="images/nav-flame-right.svg"
-                alt="background flame"
-              />
-
-              <!-- <p class="left">TICKETS</p>-->
+            <div class="row">
+                <div class=".text.image.hold">
+                    <img class="col-4 col-md-3 col-lg-2" src="images/nav-flame-left.svg" alt="background flame"/>
+                    <img class="col-4 offset-4 col-md-3 offset-md-6 col-lg-2 offset-lg-8"
+                         src="images/nav-flame-right.svg" alt="background flame"/>
+                </div>
+                <div class=".text.image.hold"></div>
+                <a href="index.html">
+                    <h1 class="d-flex justify-content-center">DANTE'S INFERNO</h1>
+                </a>
             </div>
-            <div class=".text.image.hold">
-             <!-- <p class="right">ABOUT</p>-->
-            </div>
-            <h1 class="d-flex justify-content-center">DANTE'S INFERNO</h1>
-          </div>
         </nav>
-      </div>
-    </header>
-    <main>
+    </div>
+</header>
+<main>
+    <style>
+        .image-container-2 {
+            overflow: hidden;
+            transition: transform 2s ease-in-out;
+            position: relative;
+        }
 
-      <div class="container-fluid">
-        <div class="row">
-      <section class="welcome-bg mt-4 ">
-        <h1 class="text-white pt-4 d-flex justify-content-center">WELCOME TO THE GATES</h1>
-        <img class="col-6" src="images/left-gate.png" alt="left side of gate to hell">
-        <img class="col-6" src="images/right-gate.png" alt="right side of gate to hell">
-        </section>
-        </div>
-      </div>
+        .image-container-2 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-container-2.translate-left {
+            transform: translateX(-100%);
+        }
+
+        .image-container-2.translate-right {
+            transform: translateX(100%);
+        }
+
+        .animate-button {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hidden-gate-content {
+            opacity: 0;
+            position: absolute;
+            top: 23%;
+            left: 44%;
+            z-index: -10;
+        }
+
+        .show-gate-content.hidden-gate-content {
+            opacity: 100;
+            animation-delay: 2s;
+            transition: transform 8s ease-sin-out;
+        }
+
+        .grid-gate {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+       .between-gates-button {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-in-out; /* Adjust the duration as needed */
+    }
+
+    .show-button {
+        opacity: 1 !important; /* Make the button visible */
+    }
+    </style>
     
-      <div class="container-fluid">
-        <div class="row">
-          
-        <section class="under-welcome d-flex justify-content-center">
+    <!--class needed for strobe effect welcomeContainer -->
+    <div class="container-fluid welcome-bg  mx-0 " >
+        <div class="container-fluid  px-0 mx-0 " onmouseover="startStrobe()" onmouseout="stopStrobe()">
+                <div class="row">
+              <section class=" mt-4" >
+                    
+                        <h1 class="text-white pt-4 d-flex justify-content-center">WELCOME TO THE GATES</h1>
+                        <div class="col-10 offset-1">
+                            <p class="text-white">"Through me you pass into the city of woe:
+                                Through me you pass into eternal pain:
+                                Through me among the people lost for aye.
+                                Justice the founder of my fabric moved:
+                                To rear me was the task of Power divine,
+                                Supremest Wisdom, and primeval Love.
+                                Before me things create were none, save things. Eternal, and eternal I shall endure.
+                                All hope abandon, ye who enter here."
+                                <br><span class="d-flex justify-content-center">All hope abandon, ye who enter
+                                    here."</span></p>
+                                    </div>
+                                    
+                        </div>
+                
+             
+                
+                    <div class="grid-gate">
+                        <div  onclick="startAnimation()" class="image-container-2 grid-two-column" id="leftImageContainer">
+                            <img class="w-100" src="images/left-gate.png" alt="Left Image">
+                        </div>
+                        <a href="hell.html" id="toLimboButton" class="animate-button between-gates-button" style="display: none;">To Limbo</a>
+                        <div  onclick="startAnimation()" class="image-container-2  grid-two-column" id="rightImageContainer">
+                            <img class="w-100" src="images/right-gate.png" alt="Right Image">
+                        </div>
+                    </div>
+                    </div>
+                    </section>
+                    </div>
+              
+                    
+                  
+                    
+                    <style>
+                        /* Add your custom styles here */
+                        .transparent-card {
+                            background-color: transparent;
+                        }
+
+                        .centered-title {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: black;
+                        }
+                        @keyframes strobe {
+            0% {
+                background-color: rgba(255, 255, 255, 0.361);
+            }
+            5% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            10% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            15% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            20% {
+                background-color: rgba(255, 255, 255, 0.185);
+            }
+            25% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            30% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            35% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            40% {
+                background-color: rgba(255, 255, 255, 0.226);
+            }
+            45% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            50% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            55% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            60% {
+                background-color: rgba(255, 255, 255, 0.217);
+            }
+            65% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            70% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            75% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            80% {
+                background-color: rgba(255, 255, 255, 0.132);
+            }
+            95% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            100% {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            45% {
+                background-color: rgba(0, 0, 0, 0.091);
+            }
+            50% {
+                background-color: rgba(255, 255, 255, 0.183);
+            }
+        }
+
+        .strobe-bg {
+            animation: strobe 1s infinite; /* You can adjust the animation duration as needed */
+        }
+                    </style>
+                    <script>
+                        function startAnimation() {
+                            event.preventDefault();
+                            document.getElementById('leftImageContainer').classList.add('translate-left');
+                            document.getElementById('rightImageContainer').classList.add('translate-right');
+                            document.getElementById('gate-content').classList.add('show-gate-content');
+                            
+                        }
+                        function startStrobe() {
+                             document.querySelector('.welcomeContainer').classList.add('strobe-bg'); }
+                        function stopStrobe() {
+                            document.querySelector('.welcomeContainer').classList.remove('strobe-bg');}
+                     </script>
            
-            <img class="col-6 col-md-5 mt-3 mb-3 white-button" src="images/white-button.png" alt="white button">
-            <div class="text-image-hold"><h2>ENTER</h2></div>
-            </div>
+           <section class="under-welcome">
+              <div class="container-fluid">
+              <div class="row">
+                <div class="text-center  col-md-4 col-lg-3">
+                    <a href="hell.html" class="btn-card mt-3 col-12 col-md-4 col-lg-3">
+                        <img class="col-12" src="images/white-button.png" class="img-fluid" alt="White Button">
+                        <h2 class="card-title">ENTER</h2>
+                    </a>
+                </div>
+              </div>
+              </div>
           </section>
-   </div>
-      <section>
+
+    <section class="mx-5 mb-3">
         <div class="container">
-          <div class="row">
-            <h1 class=" pt-4 d-flex justify-content-center">TICKET BUNDLES</h1>
-            <img class="col-4" src="images/ticket.png" alt="putchase ticket">
-            <img class="col-4" src="images/ticket.png" alt="putchase ticket">
-            <img class="col-4" src="images/ticket.png" alt="putchase ticket">
-          </div>
-        </div>
-      </section>
-
-      <div class="container-fluid">
-        <div class="row">
-      <section class="welcome-bg mt-4 ">
-        <h1 class="text-white pt-4 d-flex justify-content-center">OUR MISSION</h1>
-        <h2 class="text-white mission col-lg-10 offset-lg-1  pt-4 d-flex justify-content-center">Welcome to 'Inferno Realms,' where the boundary between the living and the afterlife blurs. </h2>
-
-        <div class="items">
-          <div class="item group-a ">
-           <p class="text-white col-10 offset-1"> Dante's Inferno comes to life in an immersive amusement park experience like no other. Our mission is to transport visitors on a journey through the nine circles of Hell, merging thrilling attractions with profound storytelling to create an </p>
-          </div>
-          <div class="item group-b ">
-           <p class="text-white col-10 offset-1"> unforgettable and enlightening exploration of the human soul. Join us as we redefine amusement, challenging perceptions and igniting a passion for the classics in a one-of-a-kind adventure that transcends entertainment.</p>
-          </div>
-     
-        
-         
-        </div>
-
-        </section>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="container-fluid">
-        <div class="row">
-          
-        <section class="under-welcome ">
-           
-            <p class="devil-number pt-4 d-flex justify-content-center">  666-666-6666</p>
-            
-            <p class="align d-flex justify-content-center">RealmsInferno@gmail.com</p>
+            <div class="row">
+                <h1 class="pt-4 d-flex justify-content-center">TICKET BUNDLES</h1>
+                <div class="col-4"><img class="col-12" src="images/ricketstnadard.png" alt="putchase ticket"></div>
+                <div class="col-4"><img class="col-12" src="images/ticketVIP.png" alt="putchase ticket"></div>
+                <div class="col-4"><img class="col-12" src="images/ticketsix.png" alt="putchase ticket"></div>
             </div>
-          </section>
-   </div>
+            <div class="row">
+                <div class="col-4 image-container">
+                    <a href="purchase-ticket.html"><img class="col-12" src="images/purchase.png"
+                                                        alt="Image 1"></a>
+                </div>
+                <div class="col-4 image-container">
+                    <a href="purchase-ticket.html"><img class="col-12" src="images/purchase.png"
+                                                        alt="Image 2"></a>
+                </div>
+                <div class="col-4 image-container">
+                    <a href="purchase-ticket.html"><img class="col-12" src="images/purchase.png"
+                                                        alt="Image 3"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome-bg ">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="text-white pt-4 d-flex justify-content-center">OUR MISSION</h1>
+                <h2 class="text-white mission col-lg-10 offset-lg-1  pt-4 d-flex justify-content-center">Welcome to 'Inferno Realms,' where the boundary between the living and the afterlife blurs. </h2>
+              <!--  <div class="items">
+                    <div class="item group-a ">
+                        <p class="text-white col-10 offset-1"> Dante's Inferno comes to life in an immersive amusement park experience like no other. Our mission is to transport visitors on a journey through the nine circles of Hell, merging thrilling attractions with profound storytelling to create an </p>
+                    </div>
+                    <div class="item group-b ">
+                        <p class="text-white col-10 offset-1"> unforgettable and enlightening exploration of the human soul. Join us as we redefine amusement, challenging perceptions and igniting a passion for the classics in a one-of-a-kind adventure that transcends entertainment.</p>
+                    </div>
+                </div>-->
+                <p class="text-white col-10 offset-1 col-lg-8 offset-lg-2">Dante's Inferno comes to life in an immersive amusement park experience like no other. Our mission is to transport visitors on a journey through the nine circles of Hell, merging thrilling attractions with profound storytelling to create an unforgettable and enlightening exploration of the human soul. Join us as we redefine amusement, challenging perceptions and igniting a passion for the classics in a one-of-a-kind adventure that transcends entertainment.</p>
+            </div>
+        </div>
+    </section>
+    </main>
+    
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <section class="under-welcome ">
+                    <p class="devil-number pt-4 d-flex justify-content-center"> 666-666-6666</p>
+                    <p class="align d-flex justify-content-center">RealmsInferno@gmail.com</p>
+                </section>
+            </div>
+        </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    </body>
+    </html>
+    

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slide Animation</title>
+ 
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://use.typekit.net/dob2ujl.css");
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Website Title</title>
+  </head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"> 
+  <style>
+
+
+
+  .image-container-2 {
+    overflow: hidden;
+    transition: transform 2s ease-in-out;
+    position: relative;
+  }
+
+  .image-container-2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-container-2.translate-left {
+    transform: translateX(-100%);
+  }
+
+  .image-container-2.translate-right {
+    transform: translateX(100%);
+  }
+
+ 
+  .animate-button {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .hidden-gate-content{
+        opacity:0;
+        position:absolute;
+        top:23%;
+        left:44%;
+        z-index: -10;
+    }
+    .show-gate-content.hidden-gate-content{
+        opacity: 100;
+        animation-delay: 2s;
+        transition: transform 8s ease-in-out;
+    }
+    .grid-gate{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    body{
+        overflow:hidden;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+<div class="grid-gate">
+  <div class="image-container-2 grid-two-column " id="leftImageContainer">
+    <img  class="w-100" src="images/left-gate.png" alt="Left Image">
+  </div>
+
+  <div id="gate-content" class="hidden-gate-content">
+    <p>Test content Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nemo atque officiis excepturi magnam. Suscipit rerum consequuntur earum quos eveniet a quaerat voluptate voluptatem ipsam natus, mollitia atque nostrum in!</p>
+  </div>
+
+
+  <div class="image-container-2  grid-two-column" id="rightImageContainer">
+    <img class="w-100" src="images/right-gate.png" alt="Right Image">
+  </div>
+</div>
+
+<!-- Add a link or button to trigger the animation -->
+<a style="margin-top:100px;" href="#" class="animate-button" onclick="startAnimation()">Click to Animate</a>
+
+<script>
+  function startAnimation() {
+    document.getElementById('leftImageContainer').classList.add('translate-left');
+    document.getElementById('rightImageContainer').classList.add('translate-right');
+    document.getElementById('gate-content').classList.add('show-gate-content');
+  }
+</script>
+</div>
+
+</div>
+
+</body>
+</html>
+</body>
+</html>
